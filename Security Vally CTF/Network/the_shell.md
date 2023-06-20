@@ -1,0 +1,59 @@
+# The Shell
+
+### Text: There is pcapng file. Can you reveal the flag ? 
+
+&nbsp;
+
+Score: 5
+
+Link: https://github.com/SecurityValley/PublicCTFChallenges/tree/master/network/the_shell
+
+---
+ ## Writeup
+
+In this challenge you are given a pcap file that contains a series of TCP messages. The first thing that I noticed is that there are only two IP addresses communicating through a single stream. By following the TCP stream you can clearly see the communication is the remote access from one machine to another. The flag can be found at the end before the machine exit.
+
+Full TCP Stream
+ ```
+whoami
+aicdev
+$ ls -la
+total 128
+drwxr-x--- 19 aicdev aicdev 4096 Okt 19 20:13 .
+drwxr-xr-x  3 root   root   4096 Jul 25 10:56 ..
+-rw-------  1 aicdev aicdev 2065 Sep 12 15:17 .bash_history
+-rw-r--r--  1 aicdev aicdev  220 Jul 25 10:56 .bash_logout
+-rw-r--r--  1 aicdev aicdev 3771 Jul 25 10:56 .bashrc
+drwx------ 14 aicdev aicdev 4096 Aug 24 15:35 .cache
+drwx------ 14 aicdev aicdev 4096 Aug 24 15:38 .config
+drwxr-xr-x  2 aicdev aicdev 4096 Jul 25 11:05 Desktop
+drwxr-xr-x  2 aicdev aicdev 4096 Jul 25 11:05 Documents
+drwxr-xr-x  3 aicdev aicdev 4096 Jul 29 08:32 Downloads
+-rw-rw-r--  1 aicdev aicdev   28 Okt 19 20:13 flag.txt
+drwx------  2 aicdev aicdev 4096 Aug 24 14:23 .gnupg
+drwxrwxr-x  5 aicdev aicdev 4096 Aug 24 15:27 go
+drwx------  3 aicdev aicdev 4096 Jul 25 11:05 .local
+drwxr-xr-x  2 aicdev aicdev 4096 Jul 25 11:05 Music
+drwxrwxr-x  4 aicdev aicdev 4096 Aug 24 15:40 .npm
+drwxr-xr-x  3 aicdev aicdev 4096 Jul 25 11:42 Pictures
+-rw-r--r--  1 aicdev aicdev  844 Jul 25 11:41 .profile
+drwxr-xr-x  2 aicdev aicdev 4096 Jul 25 11:05 Public
+drwx------  3 aicdev aicdev 4096 Jul 25 11:39 snap
+drwx------  2 aicdev aicdev 4096 Jul 25 11:07 .ssh
+-rw-r--r--  1 aicdev aicdev    0 Jul 25 11:07 .sudo_as_admin_successful
+drwxr-xr-x  2 aicdev aicdev 4096 Jul 25 11:05 Templates
+-rw-r-----  1 aicdev aicdev    5 Okt 19 20:09 .vboxclient-clipboard.pid
+-rw-r-----  1 aicdev aicdev    6 Okt 19 20:09 .vboxclient-display-svga-x11.pid
+-rw-r-----  1 aicdev aicdev    5 Okt 19 20:09 .vboxclient-draganddrop.pid
+-rw-r-----  1 aicdev aicdev    5 Okt 19 20:09 .vboxclient-seamless.pid
+drwxr-xr-x  2 aicdev aicdev 4096 Jul 25 11:05 Videos
+drwxr-xr-x  4 aicdev aicdev 4096 Aug 24 14:52 .vim
+-rw-------  1 aicdev aicdev 9897 Okt 19 20:13 .viminfo
+-rw-rw-r--  1 aicdev aicdev 2724 Aug 24 15:44 .vimrc
+$ cat flag.txt
+SecVal{rev_shell_fun_insec}
+$ exit
+
+ ```
+
+## Flag: SecVal{rev_shell_fun_insec}
