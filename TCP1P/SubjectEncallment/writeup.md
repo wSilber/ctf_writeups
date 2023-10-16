@@ -15,7 +15,7 @@ Included Files: [chall](chall)
 In this challenge you are given a program that contains the flag. The flag itself is encrypted and would be very time consuming to decrypt the flag on your own. Luckily the program contains a method printFlag() which will automatically decrypt and print out the flag.
 
 Decompiled printFlag method
-```
+```c
 void printFlag(void)
 
 {
