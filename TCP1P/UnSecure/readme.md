@@ -135,6 +135,5 @@ Output of shell command to read flag
 ```php
 string(44) "TCP1P{unserialize in php go brrrrrrrr ouch}
 ```
-"
 
 ## Flag: TCP1P{unserialize in php go brrrrrrrr ouch}
